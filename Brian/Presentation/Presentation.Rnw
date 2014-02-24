@@ -21,7 +21,7 @@
 \usepackage{amsthm, amssymb}
 \usepackage[makeroom]{cancel}
 
-\hypersetup{colorlinks=true, linkcolor=blue,citecolor=blue, urlcolor=blue, linktocpage=true, breaklinks=true}
+\hypersetup{colorlinks=true, linkcolor=white, citecolor=blue, urlcolor=blue, linktocpage=true, breaklinks=true}
 \graphicspath{ {./image/}}
 
 
@@ -318,6 +318,7 @@
 
 \textrm{The package \emph{xcolor} provides users a variety of choices for colors. LaTeX comes preloaded with package \emph{color}; however, this package does not give users the flexibility of mixing or defining new color patterns.}
 
+\pause
 \textrm{Some examples:}
 \begin{itemize}
 \pause \item How does a mixture of 40\% green and 100\% yellow look like?
@@ -338,16 +339,17 @@
 \end{frame}
 
 \begin{frame}[fragile]{Implementing \emph{\textrm{xcolor}}}
-\textrm{The package \emph{\textrm{xcolor}} needs to be loaded in the preamble. If we want to use the premixed colors the we need to specify the emph{\textrm{xcolor}} options. For example, the command}  \verb=\usepackage[dvipsnames,table]{xcolor}= \textrm{will enable the use of several premixed colors. \\
+\textrm{The package \emph{\textrm{xcolor}} needs to be loaded in the preamble. If we want to use the premixed colors the we need to specify the \emph{\textrm{xcolor}} options. For example, the command}  \verb=\usepackage[dvipsnames,table]{xcolor}= \textrm{will enable the use of several premixed colors. \\
+\pause
 Go to \url{http://en.wikibooks.org/wiki/LaTeX/Colors} to check out these colors and their names.}
-
+\pause
 \begin{itemize}
   \item To color text, use \verb=\textcolor{defined-color}{text} =; e.g., \verb=\textcolor{BrickRed}{text}= gives \textcolor{BrickRed}{text}
-   \begin{itemize}
-      \item Or \verb={\color{defined-color} text} =
+    \begin{itemize}
+       \pause \item Or \verb={\color{defined-color} text} =
    \end{itemize}
-  \item Other useful commands:\verb=\colorbox, \fcolorbox =
-  \item Create your own color, use \verb=\definecolor{''name''}{''model''}{''color-spec''}=. For example, I created my own Dark Green color by \verb=\definecolor{drkgreen}{RGB}{5,102,51}=.
+    \pause\item Other useful commands:\verb=\colorbox, \fcolorbox =
+    \pause\item Create your own color, use \verb=\definecolor{''name''}{''model''}{''color-spec''}=. For example, I created my own Dark Green color by \verb=\definecolor{drkgreen}{RGB}{5,102,51}=.
 \end{itemize}
 \end{frame}
 

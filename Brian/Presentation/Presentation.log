@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.9)  23 FEB 2014 01:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.9)  23 FEB 2014 20:31
 entering extended mode
 **Presentation.tex
 
@@ -1403,11 +1403,11 @@ Missing character: There is no . in font nullfont!
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
 AR\Brian\Presentation\Presentation.vrb"
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 ) [7
 
 ]
@@ -1436,12 +1436,7 @@ AR\Brian\Presentation\Presentation.vrb") [13
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
-AR\Brian\Presentation\Presentation.vrb"
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-) [14
+AR\Brian\Presentation\Presentation.vrb") [14
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1458,6 +1453,35 @@ AR\Brian\Presentation\Presentation.vrb") [17
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
 AR\Brian\Presentation\Presentation.vrb") [18
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb") [19
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb"
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+) [20
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb") [21
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb") [22
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb") [23
+
+]
+("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
+AR\Brian\Presentation\Presentation.vrb") [24
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1483,8 +1507,8 @@ Overfull \hbox (1.23767pt too wide) in paragraph at lines 6--72
 
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 538.
- [19
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 540.
+ [25
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1508,7 +1532,7 @@ Overfull \hbox (1.23767pt too wide) in paragraph at lines 6--72
  [] 
  []
 
-) [20
+) [26
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1532,7 +1556,7 @@ Overfull \hbox (1.23767pt too wide) in paragraph at lines 6--72
  [] 
  []
 
-) [21
+) [27
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1556,19 +1580,19 @@ Overfull \hbox (1.23767pt too wide) in paragraph at lines 6--72
  [] 
  []
 
-) [22
+) [28
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
 AR\Brian\Presentation\Presentation.vrb")
-Overfull \vbox (2.3672pt too high) detected at line 624
+Overfull \vbox (2.3672pt too high) detected at line 626
  []
 
-[23
+[29
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
-AR\Brian\Presentation\Presentation.vrb") [24
+AR\Brian\Presentation\Presentation.vrb") [30
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1577,7 +1601,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1.
-) [25
+) [31
 
 ]
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
@@ -1585,22 +1609,22 @@ AR\Brian\Presentation\Presentation.vrb"
 
 LaTeX Warning: Characters dropped after `\end{verbatim}' on input line 33.
 
-) [26
+) [32
 
-] <./image/graph.pdf, id=751, 217.50558pt x 179.63312pt>
+] <./image/graph.pdf, id=915, 217.50558pt x 179.63312pt>
 File: ./image/graph.pdf Graphic file (type pdf)
 
 <use ./image/graph.pdf>
-Package pdftex.def Info: ./image/graph.pdf used on input line 820.
+Package pdftex.def Info: ./image/graph.pdf used on input line 822.
 (pdftex.def)             Requested size: 130.50435pt x 107.78069pt.
 
-<./image/SimpleFlowChart.pdf, id=752, 235.25893pt x 334.92728pt>
+<./image/SimpleFlowChart.pdf, id=916, 235.25893pt x 334.92728pt>
 File: ./image/SimpleFlowChart.pdf Graphic file (type pdf)
 
 <use ./image/SimpleFlowChart.pdf>
-Package pdftex.def Info: ./image/SimpleFlowChart.pdf used on input line 820.
+Package pdftex.def Info: ./image/SimpleFlowChart.pdf used on input line 822.
 (pdftex.def)             Requested size: 141.15643pt x 200.9579pt.
- [27
+ [33
 
  <C:/Users/Brian/Documents/My Files/SCHOOL/R-Directories/git_repositories/SEMIN
 AR/Brian/Presentation/image/graph.pdf> <C:/Users/Brian/Documents/My Files/SCHOO
@@ -1609,13 +1633,13 @@ rt.pdf>]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 823.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 823.
 
 ("C:\Users\Brian\Documents\My Files\SCHOOL\R-Directories\git_repositories\SEMIN
 AR\Brian\Presentation\Presentation.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 823.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 823.
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1623,12 +1647,12 @@ Package rerunfilecheck Info: File `Presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 821.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 823.
  ) 
 Here is how much of TeX's memory you used:
- 28756 strings out of 493921
- 675658 string characters out of 3144877
- 861452 words of memory out of 3000000
+ 28780 strings out of 493921
+ 677152 string characters out of 3144877
+ 862454 words of memory out of 3000000
  31237 multiletter control sequences out of 15000+200000
  46231 words of font info for 122 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1650,9 +1674,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on Presentation.pdf (27 pages, 390680 bytes).
+Output written on Presentation.pdf (33 pages, 432594 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 1024 PDF objects out of 1200 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
  191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
