@@ -1,0 +1,16 @@
+{
+    "contents" : "*.Rproj",
+    "created" : 1393270985033.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4204569293",
+    "id" : "59BEDD77",
+    "lastKnownWriteTime" : 1393271002,
+    "path" : "~/git_repositories/SEMINAR/.gitignore",
+    "project_path" : ".gitignore",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}
