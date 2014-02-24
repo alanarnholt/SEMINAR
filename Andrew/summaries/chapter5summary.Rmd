@@ -1,0 +1,19 @@
+## Chapter 5
+
+* Discusses the importance and benefits of using cloud storage for easy accessability of your files.
+
+1. Much smaller chance of losing files if stored in a cloud as compared to storing on a flash drive or locally on the computer.
+
+* Version Control means to change and update data, with the option of declining a change or going back to a previous version.
+
+* For small to medium sized data sets, it is best to save plain text formats using .csv or .tsv.
+
+* Lots of information on Dropbox, it's uses and some benefits.
+
+1. Dropbox has version control and it can show you all the previous versions that have been overwritten.
+
+* While Dropbox simply creates folders stored in the cloud which you can share with other people, GitHub makes your projecs accesssible on a fully featured project website.
+
+* Dropbox is free for only 30 days whereas GitHubs files will remain on the server forever.
+
+* Some useful information on how to set up GitHub and a few useful codes are given.

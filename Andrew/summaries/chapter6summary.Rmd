@@ -1,0 +1,21 @@
+## Chapter 6
+
+* The level of difficulty in reproduction of data is directly impacted by how the data is gathered.
+
+1. There needs to be useful documentation to remind yourself and others what you have done.
+
+* The code makefile is very helpful in organizing data so that everything is a little easier to navigate.
+
+1. The makefile code is run in the terminal or gitbash.
+
+* Importing Data Sets
+
+1. Locally stored data sets
+
+2. Data sets from the internet
+
+3. From non-secure URLs
+
+4. From secure URLs
+
+* Some data files are too big and need to be compressed. This can be done easily through such methods as Zip and Tar.

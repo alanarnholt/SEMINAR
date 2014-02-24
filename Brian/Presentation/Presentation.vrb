@@ -1,0 +1,34 @@
+\tiny\begin{verbatim}
+\resizebox{7cm}{!}{
+\begin{tikzpicture}
+\node [block] (MF) {\color{white}\textbf{Mutual Funds}};
+\node [block, above of=MF, yshift=1em] (FC) {\color{white}\textbf{Finance Companies}};
+\node [decision, left of=FC, xshift=-5em] (SU) {\color{white}\textbf{Surplus Units}};
+\node [block, above of=FC, yshift=1em] (DI) {\color{white}\textbf{Depository Institutions
+          (Commercial Banks, Savings Institutions, Credit Unions)}};
+\node [block, below of=MF, yshift=-1em](Ins){\color{white}\textbf{Insurance Companies}};
+\node [block1, left of=Ins, xshift=-10em] (Holders) {\color{white}\textbf{Policyholders}};
+\node [block, below of=Ins, yshift=-1em](PF){\color{white}\textbf{Pension Funds}};
+\node [block1, left of=PF, xshift=-10em] (EE) {\color{white}\textbf{Employers and Employees}};
+\node [elli, right of=MF, xshift=10em] (DU) {\color{white}\textbf{Deficit Units (Firms.
+            Government Agencies, Some Individuals)}};
+
+\path [line] (SU) |-node[yshift=0.755em, xshift=8em] {\color{black}Deposits}(DI);
+\path [line] (SU) -- node[yshift=0.75em, xshift=.5em] {\color{black}Purchase}
+                  node[yshift=-0.75em, xshift=.5em] {\color{black}Securities}(FC);
+\path [line] (SU) |- node[yshift=0.75em, xshift=8em] {\color{black}Purchase}
+                  node[yshift=-0.75em, xshift=8em] {\color{black}Shares}(MF);
+\path [line] (Holders) -- node[yshift=0.75em, xshift=.5em] {\color{black}Premium}(Ins);
+\path [line] (EE) -- node[yshift=0.75em, xshift=.5em] {\color{black}Employee}
+                node[yshift=-0.75em, xshift=.5em] {\color{black}Contributions}(PF);
+
+\path [line] (DI) -|(DU);
+\path [line] (FC) -|(DU);
+\path [line] (MF) --(DU);
+\path [line] (Ins) -|(DU);
+\path [line] (PF) -|(DU);
+
+\end{tikzpicture}}
+\end{figure}
+\end{verbatim}\vspace*{-.25in}
+Check this out \url{http://elishapeterson.wikidot.com/tikz:diagrams}.
