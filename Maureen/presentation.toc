@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{What To Document?}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Where did you get the data?}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{How to Store the Data?}{6}{0}{1}
+\beamer@sectionintoc {2}{Our Project}{7}{0}{2}
+\beamer@sectionintoc {3}{In Summary}{10}{0}{3}
