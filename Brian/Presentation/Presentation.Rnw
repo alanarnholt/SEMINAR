@@ -334,6 +334,7 @@
 {\footnotesize(Answer: $3\times$\fcolorbox{black}{green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $2\times$\fcolorbox{black}{-green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $1\times$\fcolorbox{black}{red}{\footnotesize{$^{\quad}$}} $=$ \fcolorbox{black}{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}{\footnotesize{$^{\quad}$}}, \verb=\color{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}=)}
 
 \end{itemize}
+\pause
 \footnotesize{For more information, go to \url{http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/xcolor/xcolor.pdf}.
 }
 \end{frame}
