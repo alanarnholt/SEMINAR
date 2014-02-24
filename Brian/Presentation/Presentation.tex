@@ -371,19 +371,20 @@
 \pause
 \textrm{Some examples:}
 \begin{itemize}
-\pause \item How does a mixture of 40\% green and 100\% yellow look like?
+\pause \item How does a mixture of 40\% green and 90\% yellow look like?
 
-{\footnotesize(Answer: \fcolorbox{black}{green!40}{ \footnotesize{40\%}} + \fcolorbox{black}{yellow!90}{ \footnotesize{90\%}} = \fcolorbox{black}{green!40! yellow!90}{\footnotesize{G40Y90}},\verb=\color{green!40!yellow!90}=)}
+\pause{\footnotesize(Answer: \fcolorbox{black}{green!40}{ \footnotesize{40\%}} + \fcolorbox{black}{yellow!90}{ \footnotesize{90\%}} = \fcolorbox{black}{green!40! yellow!90}{\footnotesize{G40Y90}},\verb=\color{green!40!yellow!90}=)}
 
 \pause \item And how does its complementary color look like?
 
-{\footnotesize(Answer: \fcolorbox{black}{-green!40! yellow!90}{\footnotesize{notG40Y90}}, \verb=\color{-green!40!yellow}=)}
+\pause{\footnotesize(Answer: \fcolorbox{black}{-green!40! yellow!90}{\footnotesize{notG40Y90}}, \verb=\color{-green!40!yellow}=)}
 
 \pause \item How about mixing 3 parts of the last color with 2 parts of its complement and 1 part of red?
 
-{\footnotesize(Answer: $3\times$\fcolorbox{black}{green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $2\times$\fcolorbox{black}{-green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $1\times$\fcolorbox{black}{red}{\footnotesize{$^{\quad}$}} $=$ \fcolorbox{black}{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}{\footnotesize{$^{\quad}$}}, \verb=\color{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}=)}
+\pause{\footnotesize(Answer: $3\times$\fcolorbox{black}{green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $2\times$\fcolorbox{black}{-green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $1\times$\fcolorbox{black}{red}{\footnotesize{$^{\quad}$}} $=$ \fcolorbox{black}{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}{\footnotesize{$^{\quad}$}}, \verb=\color{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}=)}
 
 \end{itemize}
+\pause
 \footnotesize{For more information, go to \url{http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/xcolor/xcolor.pdf}.
 }
 \end{frame}
@@ -534,9 +535,10 @@ The \textrm{\emph{Tikz}} package needs to be loaded in the preamble before we ca
 \draw [blue, domain=pi:2*pi] plot (\x, {cos(\x r)*exp(\x/exp(2*pi))});
 \end{tikzpicture}
 \end{center}
-\end{tabular}
+\end{tabular}\vspace{-.25in}
 
 \end{table}
+\tiny {For more information, go to \url{http://cremeronline.com/LaTeX/minimaltikz.pdf}.}
 \end{frame}
 
 
