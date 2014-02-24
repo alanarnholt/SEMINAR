@@ -1,0 +1,31 @@
+Chapter 6- Gathering Data with R
+Erin Kreiling
+========================================================
+
+6.1 Organize Your Data Gathering: Makefiles
+- Organizing your data gathering from the beginning of a research project improves the possibility of reproducibility and can save you significant effort over the course of the project by making it easier to add and regather data later on.
+- Segment your project into modular files that can be run by a common "makefile".
+- A makefile runs data gathering/cleanup files and merging files.
+- It's a good idea to have the source code files use raw data as input.
+- setwd tells R where to look for and place files.
+- Running the make-like file through the source command will make it run all at once.
+- Output files are called targets and the files used to create them are called prerequisites.
+- Tabs are important in Make.
+- The first part of a makefile defines variables that will be used later on.
+- *.R selects any files name that ends in .R
+- The second part of the makefile tells Make what we want to create and how.
+- Typing make in the shell will run the makefile.
+
+6.2 Importing Locally Stored Data Sets
+- The most straightforward place to load data is from a local file. 
+
+6.3 Importing Data Sets from the Internet
+- To import data from a non-secure URL simply include the URL as the file's name in your read.table command.
+- One way to download data from a secure URL that does not rely on repmis is to use the getURL command in the RCurl package as well as read.table and textConnection.
+- To obtain large data files, download, then decompress, and then create data frame objects from these files directly in R.
+- APIs allow programs to interact with a website.
+
+6.4 Advanced Automatic Data Gathering
+- Simple web scraping involves downloading a file from the internet, parsing it, and extracting the data you are interested in and then putting it into a data frame object. 
+
+

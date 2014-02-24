@@ -1,0 +1,16 @@
+## Chapter 4
+
+* Main point is emphasizing the importance of knowing where to find stored files on your computer
+
+1. Commands to access files are key
+
+* There are root directories and sub-directories
+
+* The readme file gives an overview of everything inside the entire file
+
+* Importance of shell commands
+  
+1. Example commands of file management are cd, pwd, ls, and echo
+
+* If you are familiar with all your shell commands, keeping the orginization of files
+  becomes much easier, and so deos maunipulating the workspace.

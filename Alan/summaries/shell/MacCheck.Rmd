@@ -54,8 +54,7 @@ What time is it?
 date
 ```
 
-```{r FOLDED, fig.width=4, fig.height =4,fig.align='center'}
-#### Folded chunk ####
+```{r FOLDED, fig.width=4, fig.height =4,fig.align='center', warning=FALSE,message=FALSE}
 junk <- rnorm(1000, 100, 10)
 hist(junk, col = "red")
 library(ggplot2)

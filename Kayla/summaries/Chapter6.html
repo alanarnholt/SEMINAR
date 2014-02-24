@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong>Chapter 6: Gathering Data with R</strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<p>Kayla Janos</p>
+
+<h1><strong>Chapter 6: Gathering Data with R</strong></h1>
+
+<ul>
+<li>How you gather your data have a direct effect on how reproducible your research will be </li>
+<li>It is a good idea to have all the data gathering steps tied together by source code<br/>
+<em>6.1 Organize Your Data Gathering:Makefiles</em></li>
+<li>Organizing the data gathering process from the start, will improve the possibility of reproducible</li>
+<li>Segmenting the process into modular files that can all be run by a common &ldquo;make file&rdquo; is a key part of gathering reproducible data</li>
+<li>Segmenting your data gathering into modular files and tying them together with make files </li>
+<li>There are two types of source code files that the make file runs 
+
+<ul>
+<li>Data gathering/clean up </li>
+<li>Merging </li>
+</ul></li>
+<li>This chapter focuses on ways to bring data into R </li>
+<li>R Make-Like Files 
+
+<ul>
+<li>You normally only need two commands, setwd and source</li>
+<li><em>MergeData.R</em> merges data frames and saves the output data </li>
+</ul></li>
+<li>GNU Make 
+
+<ul>
+<li>Compares the output files time stamps to time stamps of the files that created them </li>
+<li>Will skip running files if the sources time stamp is older than its output </li>
+<li>Output files are called targets </li>
+<li>The files that create them are called prerequisites</li>
+<li>You specify a recipe to create your targets from the prerequisites </li>
+<li>tabs are important in Make. 
+
+<ul>
+<li>They indicate what lines are the recipe </li>
+</ul></li>
+<li>If a target is newer than a prereq make does not run the prereq</li>
+<li>First you must create a <em>Makefile</em> </li>
+<li>The makefile runs prereqs in alphanumeric order, so make sure to save the files in the order that we want to run them </li>
+<li>(RDIR = . ) creates simple variable </li>
+<li>(RSOURCE:= $(wildcard $(RDIR)/*.R)) Creates a variable containing a list of all the names with the extension .R </li>
+<li>$ followed by a variable name susbtistues the value of the variable in place of the name </li>
+<li>$&lt; indicates the first prereq</li>
+<li>To run the makefile for the first time, all you have to do is change the working directory to where the file is and take make into the shell</li>
+<li>make: nothing to be done for &#39;all&#39; will pop up if you run it without changing and source files </li>
+<li>to remove them use make clean 
+-Makefiles and RStudio Projects </li>
+<li>You can run makefiles from Rstudio, in the build tab</li>
+<li>If a project already contains a makefile, Rstudio will automatically open a build tab</li>
+</ul></li>
+<li>Other information about makefiles 
+
+<ul>
+<li>Make relies heavily on the type of shell you are using </li>
+<li>The code listed so far is for a mac<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>6.2: Importing Locally Stored Data Sets</strong></p>
+
+<ul>
+<li>Local files aka files stored on  your computer are the easiest place to load data from </li>
+<li>read.table can help load data stored in plain-text files on your computer </li>
+<li>RStudio has dropdown menus that will open a plain text file 
+
+<ul>
+<li>This is much less producible </li>
+</ul></li>
+<li>The <em>foreign</em> package can help pull in data from other statistical programs 
+
+<ul>
+<li>Use the read.dta command with the library package for this </li>
+</ul></li>
+<li>When moving things from places like excel it is best to clean up the data and save it in a plain text format
+
+<ul>
+<li>Make sure to remove extraneuous things like comments and colors<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>6.3: Importing data sets from the internet</strong></p>
+
+<ul>
+<li>Data stored online in simple format, and not embedded in a larger HTML website is straight forward, just use the URL as the files name in  your read.table command </li>
+<li>Data from secure (https) URLs </li>
+<li>source_data
+
+<ul>
+<li>As long as the data is in plain text and not embedded to a larger HTML the source_data command in R can be used for secure URLs </li>
+<li>the SHA-1 tag can help to make sure users are downloading the same data, incase the data has been altered since the original project </li>
+</ul></li>
+<li>source_DropboxData
+
+<ul>
+<li>Files stored on nonpublic folders are tricker to download</li>
+<li>The share link brings you to a website where the plain text file is embedded in a larger HTML webpage</li>
+<li>The <em>repmis</em> package includes a source_DropboxData command for downloading data from dropbox for this reason</li>
+<li>It is similar to the source_data command but instead of the url, you will uses the files name, and its dropbox key</li>
+<li>When you click on the Share Link button in dropbox, the URL that appears will be helpful.</li>
+<li>The very last section will be the data files name</li>
+<li>The section right before that will be the key</li>
+</ul></li>
+<li><em>RCurl</em> </li>
+<li>getURL in the RCurl package is a way to get data without the <em>repmis</em> package </li>
+<li>These have to be plain text, and not stored in a larger HTML to work also</li>
+<li>There is a section in the book that shows the code </li>
+<li>Compressed Data stored online
+
+<ul>
+<li>Create a temp file and store to the zipped file </li>
+<li>download the fil with download.file</li>
+<li>Decompress the file with the connection commands in base R</li>
+<li>Read the file with read.table </li>
+<li>You have to go through more steps with compressed data because they are more than just a single file</li>
+</ul></li>
+<li>Data APIs and feeds 
+
+<ul>
+<li>Application programming interfaces can gather data directly from a variety of internet sources </li>
+<li>Makes things alot easier </li>
+<li><em>openair</em> package, analyzing air quality data </li>
+<li><em>quantmod</em> package, access to google finance, yahoo finance, and the Federal reserve nomic data base </li>
+<li><em>treebase</em> phylogentic data from TreeBASE</li>
+<li><em>twitteR</em> package, accesses twitters API</li>
+<li><em>WDI</em> package, World Bank&#39;s Development Indicators database</li>
+<li>library(package name) will download the library</li>
+<li>You can then search the library for data information you want </li>
+<li>Then you can use the indicator to save things<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>6.4: Advanced automatic data gathering: Web Scrapping</strong></p>
+
+<ul>
+<li>General Process
+
+<ul>
+<li>Simple web scraping invovles downloading a file from the internet </li>
+<li><em>XML</em> package has tools to do this</li>
+<li><em>rjson</em> and <em>RJSONIO</em> packages are helpful too</li>
+<li>To become a good scraper it is recommend that you know HTML language </li>
+</ul></li>
+</ul>
+
+</body>
+
+</html>
+

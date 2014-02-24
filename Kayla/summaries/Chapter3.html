@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong><em>Chapter 3: Getting Started with R, RStudio, and knitr</em></strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>Kayla Janos</p>
+
+<h1><strong><em>Chapter 3: Getting Started with R, RStudio, and knitr</em></strong></h1>
+
+<ul>
+<li> This chapter is to help people learn how to use R, RStudio, and knitr</li>
+<li>Experienced users should skip over the first section<br/></li>
+</ul>
+
+<p><strong>3.1: Using R, this basics</strong></p>
+
+<ul>
+<li>R Console is what appears when you initially open R </li>
+<li>The greater than sign (&gt;) is where you can begin to write your code
+
+<ul>
+<li>To run your code all you have to do is hit the Enter or Return key<br/></li>
+</ul></li>
+</ul>
+
+<p><em>Objects</em> </p>
+
+<ul>
+<li>Objects are R language&#39;s nouns 
+
+<ul>
+<li>The objects are like vectors, data sets, etc&hellip; </li>
+</ul></li>
+<li>When you hear the saying that R is object oriented, what it really means is that R is focused on doing things to objects </li>
+<li>There is two kinds of objects, the first of which being numeric 
+
+<ul>
+<li>You can name objects almost anything as long as it doesnt have spaces an starts with a letter</li>
+</ul></li>
+<li>To put something in a object you use the assignment operator (&lt;-) as shown below</li>
+</ul>
+
+<pre><code class="r">Number &lt;- 10
+</code></pre>
+
+<ul>
+<li>If you want to see what is stored under a specific name, you type the objects name
+
+<ul>
+<li>R is case sensitive so keep that in mind </li>
+</ul></li>
+</ul>
+
+<pre><code class="r">Number
+</code></pre>
+
+<pre><code>## [1] 10
+</code></pre>
+
+<ul>
+<li>The ## you see above indicated that it is the output and not the code</li>
+<li>If you Would like to create an object with words all you have to do is include quotation marks around the text<br/>
+
+<ul>
+<li>This is a character object </li>
+</ul></li>
+<li>They type of object determines what can be done with it
+
+<ul>
+<li>You cant take the mean of a character object</li>
+</ul></li>
+<li>When you try to take the mean ## [1] NA is returned
+
+<ul>
+<li>NA means not applicable, or you can think of it as missing</li>
+</ul></li>
+<li>To find out a objects type use the class command<br/></li>
+</ul>
+
+<p><em>Vector and Data frame Objects</em> </p>
+
+<ul>
+<li>Data frames will be used throughout the book
+
+<ul>
+<li>First we will look at vectors which help to compile data frames </li>
+</ul></li>
+<li><strong>Vectors</strong> </li>
+<li>They are ordered groups of numbers, and character strings </li>
+<li>Data frames are basically multiple vectors of the same length</li>
+<li>Here is an example of how to create a numeric vector </li>
+</ul>
+
+<pre><code class="r">NumericVector &lt;- c(2, 3, 4)
+</code></pre>
+
+<ul>
+<li>A character vector is done the same way, just remember to include the quoatation marks </li>
+</ul>
+
+<pre><code class="r">CVect &lt;- c(&quot;Test&quot;, &quot;Quiz&quot;, &quot;Book&quot;)
+</code></pre>
+
+<ul>
+<li>In order to create a data frame that we can combine vectors you create using the cbind function</li>
+</ul>
+
+<pre><code class="r">StringNumObj &lt;- cbind(NumericVector, CVect)
+StringNumObj
+</code></pre>
+
+<pre><code>##      NumericVector CVect 
+## [1,] &quot;2&quot;           &quot;Test&quot;
+## [2,] &quot;3&quot;           &quot;Quiz&quot;
+## [3,] &quot;4&quot;           &quot;Book&quot;
+</code></pre>
+
+<ul>
+<li><strong>Data Frames</strong></li>
+<li>To have an object with rows and columns of different data types, you need to create a data frame</li>
+<li>This can be done using the data.frame command in R </li>
+</ul>
+
+<pre><code class="r">NewString &lt;- data.frame(CVect, NumericVector)
+NewString
+</code></pre>
+
+<pre><code>##   CVect NumericVector
+## 1  Test             2
+## 2  Quiz             3
+## 3  Book             4
+</code></pre>
+
+<p>-If you create a new object with the same name as a old object, the old object will be deleted</p>
+
+<ul>
+<li>To see just the names of your columns in a data frame the names() command will work</li>
+<li>To assign names to your rows you an use the following command </li>
+</ul>
+
+<pre><code class="r">row.names(NewString) &lt;- c(&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;)
+NewString
+</code></pre>
+
+<pre><code>##       CVect NumericVector
+## One    Test             2
+## Two    Quiz             3
+## Three  Book             4
+</code></pre>
+
+<ul>
+<li><strong>Component Selection</strong></li>
+<li>We can use the dollar sign, which is called the component selector
+
+<ul>
+<li>You can use the selector to create new objects with parts of other objects, as shown below </li>
+</ul></li>
+</ul>
+
+<pre><code class="r">NewNum &lt;- NewString$NumericVector
+NewNum
+</code></pre>
+
+<pre><code>## [1] 2 3 4
+</code></pre>
+
+<ul>
+<li>** Attach and With**</li>
+<li>The attach command in R attaches a data base to R&#39;s search path.
+
+<ul>
+<li>This make it avabliable to you without having to create the data set your self </li>
+<li>head() will let to see the first few values of a variable</li>
+</ul></li>
+<li>It is smart to detach() the data set once you are done using it so that R doesnt become confused </li>
+<li>with is used essentially the same way</li>
+<li><strong>Subscripts</strong></li>
+<li>Subscripts are another way to select parts of objects 
+
+<ul>
+<li>Subscripts are denoted with the square brackets []</li>
+</ul></li>
+<li>To get R to find parts of an object you first put the row name/number followed by the position of the information you want in the square brackets </li>
+<li><strong>Functions and Commands</strong></li>
+<li>Objects are the nouns of the R language and the functions and commands can be considered the verbs 
+
+<ul>
+<li>Things like mean() are commands </li>
+</ul></li>
+<li><strong>Arguments</strong> </li>
+<li>Arguments modify what commands do </li>
+<li>To find all teh arguments that a command can accept you can simply put a question mark in front of the command and run that line </li>
+<li>Arguments are seperated by commas </li>
+<li>You can stack arguments inside of other arguments </li>
+<li><strong>The workspace and history</strong></li>
+<li>All objects you create become part of your workspace </li>
+<li>You can use the ls command to list all the objects in your workspace 
+
+<ul>
+<li>You can also use the rm command to remove objects from the workspace </li>
+</ul></li>
+<li>You should try to avoid having R automatically save your workspace
+
+<ul>
+<li>Instead you should have your work space in specific places </li>
+</ul></li>
+<li><strong>Installing new packages</strong></li>
+<li>Commands are stored in packages </li>
+<li> To install commands that aren&#39;t part of the basic R commands you need to use the install.packages command 
+
+<ul>
+<li>When you try to download new packages you will be given a list of places to download from, you just need to find one closest to you<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>3.2: Using RStudio</strong></p>
+
+<ul>
+<li>RStudio is an enviroment that integrates everything from R.</li>
+<li>The default window 
+
+<ul>
+<li>When you initially open RStudio there should be three windowpanes </li>
+<li>The large one on the left is known as the console</li>
+<li>This works the same way  as R does </li>
+<li>Workspace/History will be in the upper right hand corner</li>
+<li>The lower right hand pane contians <em>Files/Plots/Packages/Help</em> </li>
+</ul></li>
+<li>The Source Pane 
+
+<ul>
+<li>Does not show up initially </li>
+<li>Whenever you create a new doucument the source code comes up<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>3.3: Using <em>knitr</em>: the Basics</strong></p>
+
+<ul>
+<li>Knitr ties together your presentation of results with the data you use to create it </li>
+<li>Knitr process takes three steps 
+
+<ul>
+<li>First you create a knittable markup document </li>
+<li>Then you add you input </li>
+<li>Lastly you compile the document and it produces a PDF document presenting your results
+-Code Chunks </li>
+<li>When you want to include R code in your presentation documents you place them in a code chunk</li>
+<li>In RStudio there is a button you can click to add the chunk, and then you include your R code in the middle of the chunk</li>
+<li>In each kind of document, the way code chunks appear are different</li>
+</ul></li>
+<li>Code Chunk Options 
+
+<ul>
+<li>You can label your chunks </li>
+<li>This is done in the chunk head </li>
+<li>They have the same rules as R command arguments </li>
+<li>All labels and code chunk must be on the same line </li>
+<li>The book has a number of different examples throughout it about code chunks </li>
+</ul></li>
+<li>Global chunk options 
+
+<ul>
+<li>If we want a option to apply to  all the chunks in a document you can set global chunk options </li>
+<li>Global options help to ensure documents are formatted consistantly </li>
+<li>You create a new chunk at the start of a document, and make sure to include the option include=FALSE</li>
+<li>Inside the code us opts_chunk$set() then you can set any option you want in these paranthesis </li>
+<li>This will be applied throughout the document </li>
+</ul></li>
+<li>Knitr package options
+
+<ul>
+<li>Knitr package options can affect how the package itself runs</li>
+<li>These are set the same way global options are </li>
+</ul></li>
+<li>knitr and RStudio 
+
+<ul>
+<li>Most RStudio/knitr features are accessed in the source pane </li>
+<li>The source panes appearance changes depending on the type of file you have open </li>
+<li>Compiling R source code Notebooks </li>
+<li>You can use &ldquo;Complie Notebook&rdquo; in R for an quick well formatted account of the code that you ran </li>
+<li>It will produce a html file that will also include all of the code from a R source file as well as its out put </li>
+<li>In order to create a notebook from an open R source file simply click on hte Compile Notebook icon in the source panels top bar 
+
+<ul>
+<li>The compile button in a window should pop up </li>
+</ul></li>
+<li>R Markdown</li>
+<li>R Markdown is similar to a R script but has a new toolbar at the top </li>
+<li>It gives you options to insert code chunks </li>
+<li>RStudio will properly highlight language syntax and the R code in your source pane </li>
+<li>It provides arrows that allow you to collaspe the R code so that it is still in the document but you dont see it while editing</li>
+<li>When you are done you can chose to knit your presentation and it produces a PDF </li>
+</ul></li>
+<li>R LaTeX 
+
+<ul>
+<li>LaTeX has a lot of similar options </li>
+<li>The biggest difference  is you chose to compile a PDF instead of knitting it </li>
+<li>There is also a format icon instead of the question mark which inserts LaTeX formatting commands into your document </li>
+</ul></li>
+<li><strong>Knitr and R</strong></li>
+<li>knitr is a regular R package
+
+<ul>
+<li>You can knit documents straight from R or from RStudio </li>
+</ul></li>
+<li>The only difference when doing it directly from R is that you use the knit command instead of the Complie PDF or knit HTML buttons </li>
+<li>An example of the command you would use is:<br/>
+&gt;knit2html(file = &ldquo;Example.Rmd&rdquo;, output = &ldquo;Example.html&rdquo;)</li>
+</ul>
+
+</body>
+
+</html>
+

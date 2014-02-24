@@ -1,0 +1,66 @@
+Maureen 
+========================================================
+
+## Chapter 4
+
+### What's It About?
+
+1. File Management
+  * Explicitly tie your files together
+  * Plan, Organize, and Store Documents
+2. File paths and naming
+  * Root directory
+    * First level of the file 'tree' like the hard drive
+  * Subdirectories 
+    * Various levels of the file 'trees'
+  * Don't put a space in your file name. That is BAD!
+  * Working Directory
+    * Where you work on your files
+    * They all fall under this
+3. Organizing your Research Project
+  * Create a README.md file which allows you to showcase what your project is about.  It is the first thing that a reader will see.
+  * Set direcories using a project 
+    * This allows you to have one main project which all of your data will be under.
+4. R File Manipulation Commands
+  * getwd
+    * finds your current working directory
+  * list.files
+    * lists the files in your directory
+  * setwd
+    * Sets your working directory
+  * dir.create
+    * Creates a new directory
+  * file.create
+    * Creates a new file (blank)
+  * cat
+    * Kind of weird.  Allows you to create a file and put text into it
+    * Will overwrite existing files
+  * unlink
+    * DELETE! PERMENTANTLY
+  * file.rename
+    * Renames your file
+  * file.copy
+    * Copies the file to a new directory
+4. Unix-Shell Commands
+  * cd
+    * Changes the working directory
+  * cd-
+    * Changes to a previous 
+  * pwd
+    * Find your current working directory
+  * ls
+    * Lists the documents in directory
+  * mkdir
+    * Makes a new directory
+  * echo
+    * Prints arguments
+  * rm
+    * DELETE!!
+  * mv
+    * Moves a file to another place
+  * cp
+    * Copies a file
+  * system
+    * Run shell commands within R
+4. Navigation
+  * Use your brain there are buttons to click.

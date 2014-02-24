@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Chapter 6 Gathering Data with R</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Chapter 6 Gathering Data with R</h1>
+
+<p>Data gathering is probably the most time-consuming and sometimes messy part of a research. For this reason, it is extremely crucial for researchers to record, to organize and to store their data such a way that can be retracable and reproducible.  </p>
+
+<h2>Organize Data Gathering: Makefiles</h2>
+
+<p>Organizing data gathering process from the beginning of the research project improves the possibility of reproducibility and can save significant effort over the course of the project by making it easier to add and regather data later on. </p>
+
+<p>A key part of data gathering with R is segmenting the process into modular files that can all be run by a common &ldquo;makefile.&rdquo; There are two types of source code files that the makefile runs: data gathering/clean up files and merging files. Data clean up files bring raw data sources into R and transform them so that they can be merged together with data from the other sources. Merging files are executed by the makefile after it runs the data gathering/clean up files. </p>
+
+<p>As a useful practice, the source code should avoid directly changing raw data files. Instead changes should be put into new objects and data files. Doing this makes it easier to reconstruct the steps to create the data set.</p>
+
+<h2>Importing Locally Stored Data Sets</h2>
+
+<p>Although storing data locally is discouraged, most research projects will involve loading data this way at some point.  Data stored in plain-text files on the computer can be loaded into R using the <code>read.table</code> command.</p>
+
+<p>If the data is saved in a format created by other programs, such as SPSS, SAS, or Stata, we can import it using commands in the <em>foreign</em> package.  Commands in the <em>foreign</em> package have similar syntax to <code>read.table</code>.</p>
+
+<p>If the data is stored in a spreadsheet format such as Excel&#39;s .<em>xlsx</em>, it is best to first clean up the data by hand and then save the file in plain-text format. When cleaning up the data, make sure that the first row has the variable names and that observations are in the following rows. Also, remove any extraneous information such as notes, colors, and so on that will not be part of the data frame.</p>
+
+<h2>Importing Data Sets from the Internet</h2>
+
+<p>To import data into R from a <strong>non-secure URL</strong> - ones that start with <code>http</code>- is easily accomplished by using the command <code>read.table(file=&quot;URL&quot;)</code> provided that:</p>
+
+<ul>
+<li>the data is stored in a simple format, e.g., plain-text,</li>
+<li>the file is not embedded in a larger HTML website.</li>
+</ul>
+
+<p>Importing data into R from  a <strong>secure URL</strong> - ones that start with <code>https</code>- involves more work.  There are at least three methods for downloading data into R: <code>source_data, source_DropboxData</code>, and the <em>RCurl</em> package.</p>
+
+<p>Sometimes, importing data into R from the Internet involves dealing with <strong>compressed data files</strong>. In most cases, we can download, decompress, and create data frame objects from these files directly in R. To do this we need to:</p>
+
+<ul>
+<li>create a temporary file with tempfile to store the zipped file, which we will later remove with the unlink command,</li>
+<li>download the file with download.file,</li>
+<li>decompress the file with one of the connections commands in base R,</li>
+<li>read the file with read.table,</li>
+</ul>
+
+<p>For example,</p>
+
+<p><code>url&lt;- &quot;http://bit.ly/file.name&quot;</code></p>
+
+<p><code>temp&lt;-tempfile()</code></p>
+
+<p><code>download.file(url,temp)</code></p>
+
+<p><code>Data&lt;- read.csv(gzfile(temp, &quot;name.csv&quot;))</code></p>
+
+<p><code>unlink(temp)</code></p>
+
+</body>
+
+</html>
+

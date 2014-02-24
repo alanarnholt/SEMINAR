@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Chapter 4 Getting Started with File Management</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Chapter 4 Getting Started with File Management</h1>
+
+<p>File management is a very important part of reproducibility. Using tools such as R, <code>knitr</code>, and markup languages like LaTeX requires detailed knowledge of where files are stored. This chapter discusses ways to effectively manage locally stored files.</p>
+
+<p><strong>File Paths &amp; Naming Conventions</strong></p>
+
+<p>Almost all of the operating systems organize files in hierarchical directories, also known as file trees. A <em>root directory</em> is the first level in a disk, such as a hard drive. All other directories are subdirectories of the root directory.</p>
+
+<p>On Windows computers separate subdirectories are indicated with a back slash (\); for example, <strong>C:\Example\Data</strong>. It is important to note that when we type Windows file paths into R, we need to use two backslashes (\ \) rather than one because the \ is an escape character in R. Alternatively, we can use one forward slash (/) to write Windows file names in R. </p>
+
+<p>It is generally good practice to avoid putting spaces in the file and directory names. Some computer programs may interpret space as the end of the file name. We can make multi-word names easily readable without using spaces by adopting a convention such as ChapterFour.</p>
+
+<p>When using R, it is important to know what the current working directory is. The <strong>working directory</strong> is the directory where the program automaticallaly looks for files and other directories. A useful R command <code>getwd()</code> will tell you what current working directory is.</p>
+
+<p><strong>Some Useful R Commands for File Manipulation</strong></p>
+
+<p><code>list.file()</code> will show all of the files and subdirectories in the current working directory.</p>
+
+<p><code>set.wd()</code> will set the current working directory.</p>
+
+<p><code>dir.create()</code> will create a new directory.</p>
+
+<p><code>file.create()</code> will create a new file.</p>
+
+<p><code>cat()</code> (concatenate and print) will create a new file and put text into it. For example, <code>cat(&quot;Chapter 4 Getting Started with File Management&quot;, file=&quot;ExampleCat.md&quot;)</code>. </p>
+
+<p><code>unlink()</code> will delete specified files and directories.</p>
+
+<p><code>file.rename(from=&quot;Old Name&quot;, to=&quot;New name&quot;)</code> will rename a file or to move a file from one directory to another.</p>
+
+<p><code>file.copy(from=&quot;Old Name&quot;, to=&quot;New name&quot;)</code> will copy a file from one directory to another.</p>
+
+</body>
+
+</html>
+

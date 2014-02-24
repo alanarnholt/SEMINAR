@@ -1,0 +1,63 @@
+# Doing it with OSX
+
+## Having fun --- or Not
+
+OK....does **bash** work with OSX?
+
+First, check if the following works at the **R** prompt.
+
+```{r comment = NA}
+Sys.which('bash')
+```
+
+Cool!  It looks like I am good to go.
+
+Now we will print the working directory from **bash**.
+
+```{r engine = 'bash', comment = NA}
+pwd
+```
+
+To see if **sh** will work, test to see if it is found on your system.  
+I have **xcode** installed on my system.  You may want to install [xcode](https://developer.apple.com/xcode/) if you have not already.
+
+```{r comment = NA}
+Sys.which('sh')
+```
+
+Hot dog!  This is working.  Issue some commands to see what is in the working directory.
+
+```{r engine = 'sh', comment = NA}
+ls -a
+```
+
+Maybe a little more information. Note: `-al` lists details for hidden and 
+unhiddn files and folders.
+
+```{r engine = 'sh', comment = NA}
+ls -al
+```
+`touch` creates an empty file
+
+```{r engine = 'sh', comment = NA}
+touch NewFile
+ls
+```
+```{r engine = 'sh', comment = NA}
+rm NewFile
+ls
+```
+
+What time is it?
+
+```{r engine = 'bash', comment = NA}
+date
+```
+
+```{r FOLDED, fig.width=4, fig.height =4,fig.align='center'}
+#### Folded chunk ####
+junk <- rnorm(1000, 100, 10)
+hist(junk, col = "red")
+library(ggplot2)
+ggplot(data.frame(x = junk), aes(x = x)) + geom_histogram()
+```

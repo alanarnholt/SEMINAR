@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Chapter 7 Preparing Data for Analysis</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Chapter 7 Preparing Data for Analysis</h1>
+
+<h2>Cleaning Data for Merging</h2>
+
+<p>Most raw data will need cleaning up before we can use them for any analysis. Before we do anything to the data, we should look at the data first. R comes with some basic commands such as <code>head</code> to show the first few observations in the data frame, <code>tail</code> to show the last few observations in the, <code>names</code> to show the variable names, and <code>dim</code> to show the dimension of the data frame in the form of \( \small {rows \times columns} \). In addition, the <code>summary</code> gives a basic descriptive statistics for all of the variables in a data frame. And to convert objects into dataframe, we use the command <code>data.frame</code>.</p>
+
+<p>There are two main formats for data frames, &ldquo;long&rdquo; and &ldquo;wide&rdquo; formats. In &ldquo;long&rdquo; format, the data frame columns are variables and rows are specific observations. In &ldquo;wide&rdquo; format, columns are observations and rows are variables. Most R statistical tools assume that the data is in &ldquo;long&rdquo; format. For this reason, we may have to reshape some of our raw data from &ldquo;wide&rdquo; to &ldquo;long&rdquo; format. Preloaded with R, the matrix transpose command <code>t</code> and the command <code>reshape</code> can help us reshape the data. However, the author suggests that the package <em>reshape2</em> can provide better solution in this regard.</p>
+
+<p>The data clean up process may include changing the names of our variables. Package <em>plyr</em> provides an easy solution for this with the command <code>rename</code>. We may also want to recode the variables. This is important when we merge data sets together since R can only use identical <strong>identification values</strong> to match each observation. This can be accomplished through the use of <code>x &lt;- y</code> \( - \) changing <code>x</code> to <code>y</code>. Furthermore, the commands <code>factor</code>, <code>character</code>, and <code>numeric</code> enable us to convert variables from one form to another. For example, the <code>factor</code> command can be used to convert a numeric variable to a factor variable.</p>
+
+<h2>Merging Data Sets</h2>
+
+<p>We can bind data sets, given they have the same dimension, by using commands <code>cbind</code> to bind columns or <code>rbind</code> to bind rows. However, the most effective way to merge two data sets together is with the <code>merge</code> command. (Note: If we need to merge more than two sets, repeat the command). The advantage of using the <code>merge</code> command is that it gives users the option to choose what to merge. For example, the R code </p>
+
+<p><code>merge (x=DataA, y=DataB, by = &quot;name&quot;)</code></p>
+
+<p>merges the two data sets <code>DataA</code> and <code>DataB</code>. The <code>by</code> argument specifies what variable in the two frames identify the observations so that we can match them.  If we need to merge data frames based on the overlap of two variables, we need to add the <code>union</code> command to the <code>by</code> argument. For example,</p>
+
+<p><code>merge (x=DataA, y=DataB, by = union(&quot;name1&quot;, &quot;name2&quot;))</code>.</p>
+
+<p>Merging data sets sometimes creates a little post-merge &ldquo;mess&rdquo; that requires some clean up. Duplicate observations are one issue. The command <code>duplicated</code> is useful for identifying and removing duplicates in the data frames.  Another common issue is duplicate variables. If a variable needs to be removed, we can use function <code>remove.vars</code> from the package <em>gdata</em> to do this. </p>
+
+</body>
+
+</html>
+

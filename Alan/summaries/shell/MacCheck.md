@@ -75,15 +75,15 @@ ls -al
 
 ```
 total 144
-drwxr-xr-x  9 alan  staff    306 Feb  3 14:30 .
+drwxr-xr-x  9 alan  staff    306 Feb  3 16:47 .
 drwxr-xr-x  8 alan  staff    272 Feb  3 14:15 ..
--rw-r--r--  1 alan  staff   1283 Feb  3 14:30 MacCheck.Rmd
--rw-r--r--  1 alan  staff  40883 Feb  3 14:30 MacCheck.html
--rw-r--r--  1 alan  staff   2434 Feb  3 14:30 MacCheck.md
+-rw-r--r--  1 alan  staff   1289 Feb  3 16:48 MacCheck.Rmd
+-rw-r--r--  1 alan  staff  39794 Feb  3 16:47 MacCheck.html
+-rw-r--r--  1 alan  staff   2496 Feb  3 16:47 MacCheck.md
 -rw-r--r--  1 alan  staff   1085 Feb  3 14:15 WindowsCheck.Rmd
 -rw-r--r--  1 alan  staff  15189 Feb  3 14:15 WindowsCheck.html
 -rw-r--r--  1 alan  staff   1646 Feb  3 14:15 WindowsCheck.md
-drwxr-xr-x  5 alan  staff    170 Feb  3 14:30 figure
+drwxr-xr-x  5 alan  staff    170 Feb  3 16:47 figure
 ```
 
 `touch` creates an empty file
@@ -130,13 +130,12 @@ date
 ```
 
 ```
-Mon Feb  3 14:32:09 EST 2014
+Mon Feb  3 16:48:13 EST 2014
 ```
 
 
 
 ```r
-#### Folded chunk ####
 junk <- rnorm(1000, 100, 10)
 hist(junk, col = "red")
 library(ggplot2)
@@ -146,10 +145,6 @@ library(ggplot2)
 
 ```r
 ggplot(data.frame(x = junk), aes(x = x)) + geom_histogram()
-```
-
-```
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
 <img src="figure/FOLDED2.png" title="plot of chunk FOLDED" alt="plot of chunk FOLDED" style="display: block; margin: auto;" />

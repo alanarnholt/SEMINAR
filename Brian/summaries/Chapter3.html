@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Chapter 3 Getting Started with R, RStudio, and Knitr</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Chapter 3 Getting Started with R, RStudio, and Knitr</h1>
+
+<h1>R</h1>
+
+<p>R is a statistical programming language, often referred to as an &ldquo;object-oriented language.&rdquo; This means everything can be viewed as objects and R commands or functions call for actions on those objects.</p>
+
+<p>An <strong>object</strong> can be numeric or character-stringed or both. The simplest form of an object in R is a <strong>vector</strong>, which is an ordered group of numbers, character strings, or both. Other typical types of object include: data frame, matrix, and table, which are usually made up by putting together several vectors.</p>
+
+<p>Working with data in a vectors, such as displaying or performing calculations, is quite simple. However, manipulating data within a data frame requires some extensive knowledge. One useful way to select certain part of a data frame is the use of the <em>componenent selector</em> ($). For example, using this R command <code>mean(data$subdata1)</code> means that we want to calculate the mean of <code>subdata1</code> which is a vector in the data frame <code>data</code>.</p>
+
+<p>A <strong>function* or **command</strong> acts on objects. In R, a command is followed by the set parentheses enclosing the specified object that the command will act on, along with a set of command arguments. For example, <code>mean(x=data, trim=0.10)</code>. To find all the arguments that a command can accept look at the <strong>Arguments</strong> section of the command&#39;s help file. To access the help file type: <code>?command</code>; for example, <code>?mean</code>.</p>
+
+<h1>RStudio</h1>
+
+<p>RStudio is an integrated development environment for R. It provides a centralized and well organized place to do almost anything we want with R, and more. A default RStudio window contain three panes. The one on the left side is the <em>Console</em> which functions exactly the same as the console in regular R. In the upper right-hand corner, the <em>Workspace/History</em> helps users keep track of objects they have in the workspace, and the history of the commands they have run. Finally, the <em>Files/Plots/Packages/Help/Viewer</em> pane in the lower right-hand corner helps user navigate their files, see plots, or pull up help files.</p>
+
+<h1><code>knitr</code></h1>
+
+<p>The package <code>knitr</code> is an R package with commands for tying analysis code into presentation documents including those written in Latex and Markdown. The <code>knitr</code> process takes three steps. It begins with a <em>knittable</em> document that we create containing analysis source codes and rules for how to format the text (the markup). Then <code>knitr</code> will <em>knit</em> the source document into a <em>markup only document</em>. Finally, it then compiles the markup document into a presentation document such as pdf or html.</p>
+
+</body>
+
+</html>
+
