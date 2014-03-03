@@ -1,0 +1,21 @@
+## Chapter 13 Summary
+
+* Our best option for presenting research findings on the internet is in HTML.
+  1. Markdown was created as a simplified way of writing HTML      
+  documents.
+
+* Markdown files make large use of the # for any headers or titles.
+
+* Italics and bold.
+  1. You can italicize by placing two asteriks *around this phrase* 
+  or   
+  2. Make bold by placing 4 asteriks around **this phrase**
+
+* Pandoc and Custom CSS
+  1. Both style files to render Markdown documents into HTML.
+  2. You replace the markdowntoHTML with pandoctoHTML.
+  3. You can do footnotes and biliographies with Pandoc.
+  4. You can add custom CSS files to Pandoc rendered Markdown files.
+
+* You can do slideshows with Markdown and knitr.
+  1. Slidify is the main one to use and there is an expample.
