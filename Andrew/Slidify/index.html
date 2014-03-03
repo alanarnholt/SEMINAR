@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slidify Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Slidify Presentation">
+  <meta name="author" content="Andrew Kryzanek">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Slidify Presentation</h1>
+    <h2></h2>
+    <p>Andrew Kryzanek<br/>Senior Seminar 3/3/14</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Basics</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Edit YAML front matter - a human reaadable data serialization format that takes concepts from programming languages such as C, Perl, and Python, and ideas from KML and the data format of eletctronic mail
+(YAML is a recursive acronym for &quot;YAML Ain&#39;t Markup Language&quot; and used to mean &quot;Yet Another Markup Language.&quot;)</p></li>
+<li><p>Write using R Markdown</p></li>
+<li><p>Use an empty line followed by three dashes to separate slides!</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Installation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Step  Description   Code</p>
+
+<ul>
+<li>require(devtools)</li>
+<li>install_github(&quot;slidify&quot;,&quot;ramnathv&quot;)</li>
+<li>install_github(&quot;slidifyLibraries&quot;, &quot;ramnathv&quot;)</li>
+<li>library(slidify)</li>
+<li>author(&quot;mydeck&quot;)</li>
+</ul>
+
+<p>Then edit in RMarkdown</p>
+
+<ul>
+<li>slidify(&quot;index.RMD&quot;)</li>
+<li>publish(user = &quot;USER&quot;, repo = &quot;REPO&quot;)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <pre><code>## Loading required package: class
+## Loading required package: devtools
+## Loading required package: e1071
+## Loading required package: lattice
+## Loading required package: maps
+## Loading required package: MASS
+## Loading required package: PASWR
+## Loading required package: PASWR2
+## Loading required package: ggplot2
+## 
+## Attaching package: &#39;PASWR2&#39;
+## 
+## The following objects are masked from &#39;package:PASWR&#39;:
+## 
+##     bino.gen, checking.plots, EPIDURAL, EURD, FCD, interval.plot,
+##     ksdist, normarea, nsize, ntester, oneway.plots, SBIQ, SDS4,
+##     SIGN.test, tsum.test, twoway.plots, z.test, zsum.test
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Uses Code-Chunks</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">
+
+summary(HSwrestler)
+</code></pre>
+
+<pre><code>##       AGE             HT             WT             ABS      
+##  Min.   :13.0   Min.   :56.0   Min.   : 93.4   Min.   : 6.0  
+##  1st Qu.:15.0   1st Qu.:64.6   1st Qu.:125.1   1st Qu.: 9.0  
+##  Median :16.0   Median :67.5   Median :142.2   Median :11.0  
+##  Mean   :15.7   Mean   :66.8   Mean   :154.1   Mean   :16.7  
+##  3rd Qu.:17.0   3rd Qu.:69.0   3rd Qu.:171.3   3rd Qu.:19.0  
+##  Max.   :18.0   Max.   :73.0   Max.   :299.2   Max.   :54.0  
+##     TRICEPS         SUBSCAP         HWFAT           TANFAT    
+##  Min.   : 6.00   Min.   : 6.0   Min.   : 3.58   Min.   : 6.4  
+##  1st Qu.: 7.62   1st Qu.: 8.0   1st Qu.: 8.73   1st Qu.:11.9  
+##  Median :10.00   Median : 9.0   Median :11.13   Median :14.0  
+##  Mean   :12.96   Mean   :12.9   Mean   :14.24   Mean   :16.7  
+##  3rd Qu.:14.00   3rd Qu.:12.0   3rd Qu.:15.42   3rd Qu.:18.2  
+##  Max.   :42.00   Max.   :43.0   Max.   :41.89   Max.   :44.9  
+##      SKFAT      
+##  Min.   : 8.12  
+##  1st Qu.: 9.99  
+##  Median :11.16  
+##  Mean   :15.15  
+##  3rd Qu.:15.16  
+##  Max.   :41.09
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">x &lt;- glm(HSwrestler$HT ~ HSwrestler$WT + HSwrestler$TANFAT + HSwrestler$SKFAT)
+summary(x)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## glm(formula = HSwrestler$HT ~ HSwrestler$WT + HSwrestler$TANFAT + 
+##     HSwrestler$SKFAT)
+## 
+## Deviance Residuals: 
+##    Min      1Q  Median      3Q     Max  
+## -7.789  -0.931   0.224   1.250   5.076  
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        55.5848     1.0993   50.56  &lt; 2e-16 ***
+## HSwrestler$WT       0.1119     0.0109   10.29  6.3e-16 ***
+## HSwrestler$TANFAT  -0.1503     0.0889   -1.69   0.0952 .  
+## HSwrestler$SKFAT   -0.2327     0.0852   -2.73   0.0079 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 4.815)
+## 
+##     Null deviance: 919.35  on 77  degrees of freedom
+## Residual deviance: 356.32  on 74  degrees of freedom
+## AIC: 349.8
+## 
+## Number of Fisher Scoring iterations: 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">hist(HSwrestler$WT, col = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">boxplot(HT ~ WT, data = HSwrestler, main = &quot;Size Distribution&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Basics'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Installation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Uses Code-Chunks'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
