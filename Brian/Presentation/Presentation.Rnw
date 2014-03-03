@@ -25,7 +25,7 @@
 \graphicspath{ {./image/}}
 
 
-\title[How to Use Color and Draw Diagrams in Latex]{Introduction  to Packages \textit{xcolor} and \emph{tikz} How to make an impression with LaTeX?}
+\title[How to Use Color and Draw Diagrams in \LaTeX]{Introduction  to Packages \textit{xcolor} and \emph{tikz} \\ How to make an impression with \LaTeX?}
 \author{Brian Pham}
 \institute{}
 \date{February 24, 2014}
@@ -316,22 +316,22 @@
 
 \begin{frame}[fragile]{Introduction to \emph{\textrm{xcolor}}}
 
-\textrm{The package \emph{xcolor} provides users a variety of choices for colors. LaTeX comes preloaded with package \emph{color}; however, this package does not give users the flexibility of mixing or defining new color patterns.}
+\textrm{The package \emph{xcolor} provides users a variety of choices for colors. \LaTeX comes preloaded with package \emph{color}; however, this package does not give users the flexibility of mixing or defining new color patterns.}
 
 \pause
 \textrm{Some examples:}
 \begin{itemize}
-\pause \item How does a mixture of 40\% green and 100\% yellow look like?
+\pause \item How does a mixture of 40\% green and 90\% yellow look like?
 
-{\footnotesize(Answer: \fcolorbox{black}{green!40}{ \footnotesize{40\%}} + \fcolorbox{black}{yellow!90}{ \footnotesize{90\%}} = \fcolorbox{black}{green!40! yellow!90}{\footnotesize{G40Y90}},\verb=\color{green!40!yellow!90}=)}
+\pause{\footnotesize(Answer: \fcolorbox{black}{green!40}{ \footnotesize{40\%}} + \fcolorbox{black}{yellow!90}{ \footnotesize{90\%}} = \fcolorbox{black}{green!40! yellow!90}{\footnotesize{G40Y90}},\verb=\color{green!40!yellow!90}=)}
 
 \pause \item And how does its complementary color look like?
 
-{\footnotesize(Answer: \fcolorbox{black}{-green!40! yellow!90}{\footnotesize{notG40Y90}}, \verb=\color{-green!40!yellow}=)}
+\pause{\footnotesize(Answer: \fcolorbox{black}{-green!40! yellow!90}{\footnotesize{notG40Y90}}, \verb=\color{-green!40!yellow}=)}
 
 \pause \item How about mixing 3 parts of the last color with 2 parts of its complement and 1 part of red?
 
-{\footnotesize(Answer: $3\times$\fcolorbox{black}{green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $2\times$\fcolorbox{black}{-green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $1\times$\fcolorbox{black}{red}{\footnotesize{$^{\quad}$}} $=$ \fcolorbox{black}{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}{\footnotesize{$^{\quad}$}}, \verb=\color{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}=)}
+\pause{\footnotesize(Answer: $3\times$\fcolorbox{black}{green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $2\times$\fcolorbox{black}{-green!40! yellow!90}{\footnotesize{$^{\quad}$}} $+$ $1\times$\fcolorbox{black}{red}{\footnotesize{$^{\quad}$}} $=$ \fcolorbox{black}{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}{\footnotesize{$^{\quad}$}}, \verb=\color{rgb:-green!40!yellow,3;green!40!yellow,2;red,1}=)}
 
 \end{itemize}
 \pause
@@ -393,7 +393,7 @@ A PERSON SCORING POSITIVELY ON THE DIMENSION}}\\
 \end{frame}
 
 \begin{frame}[fragile]{Introduction to \emph{\textrm{tikz}}}
-\textrm{\emph{Tikz}} is probably the most comprehensive drawing tool for LaTex documents. 
+\textrm{\emph{Tikz}} is probably the most comprehensive drawing tool for \LaTeX documents. 
   \begin{itemize}
     \pause\item Challenging $-$ Requires a big learning curve
     \pause\item Point mapping $-$ Requires a good knowledge about geometry
@@ -485,9 +485,10 @@ The \textrm{\emph{Tikz}} package needs to be loaded in the preamble before we ca
 \draw [blue, domain=pi:2*pi] plot (\x, {cos(\x r)*exp(\x/exp(2*pi))});
 \end{tikzpicture}
 \end{center}
-\end{tabular}
+\end{tabular}\vspace{-.25in}
 
 \end{table}
+\tiny {For more information, go to \url{http://cremeronline.com/LaTeX/minimaltikz.pdf}.}
 \end{frame}
 
 

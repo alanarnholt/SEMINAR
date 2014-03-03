@@ -1,0 +1,16 @@
+{
+    "contents" : "Chapter 11- Presenting with LaTeX\n========================================================\n\n11.1 The Basics\n- RStudio is a fully functional LaTeX editor.\n- R Sweave files are LaTeX files that can include knitr code chunks.\n- Lyx is a Microsoft Word-type program that is easy for beginners to use.\n- Arguments for LaTeX commands are enclosed in curly braces {}.\n- Commands start with a backslash.\n- You tell LaTeX where the body of your document starts by typing \\begin{document} and where it ends by typing \\end{document}.\n- Use the command hyperref for clickable hyperlinks and the command natbib for bibliography formatting.\n- Use the command section to create section-level headings.\n- Paragraphs are created by adding a blank line between lines.\n- hrulefill creates horizontal lines.\n- You can make text bold by using textbf.\n- Math syntax uses backslashes and parentheses.\n- You can create lists using the \\begin{itemize} command.\n\n11.2 Bibliographies with BibTeX\n- All major TeX distributions come with BibTeX.\n- Bibliographies are stored in files with the extension .bib\n- Each citation must have a unique CITE_KEY.\n- You can use the \\bibliography command to include citations from a BibTeX file.\n- knitr's write_bib command currently does not have the ability to append package citations to an existing file, but instead writes them to a new file.\n\n11.3 Presentations with LaTeX Beamer\n- Combining LaTeX and knitr can make fully reproducible presentations that dynamically create and present results. \n- Beamer class documents create PDF files.\n- You use documentclass to set a LaTeX document as a beamer slideshow.\n\n",
+    "created" : 1393265432160.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3078198518",
+    "id" : "9A6C5A02",
+    "lastKnownWriteTime" : 1393266798,
+    "path" : "~/git_repositories/SEMINAR/Erin/summaries/Chapter11.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
