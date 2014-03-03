@@ -1,0 +1,30 @@
+Chapter 7- Preparing Data for Analysis
+Erin Kreiling
+========================================================
+
+7.1 Cleaning Data for Merging
+- In order to successfully merge two or more data frames we need to make sure that they are in the same format.
+- The names command will show variable names in a data frame.
+- The head command shows the first few observations.
+- The tail command shows the last few observations.
+- The dim command will show you the number of observations and variables in a data frame.
+- The summary command will give a basic description of statistics in a data frame.
+- The table command creates a contingency table with counts of the number of observations per combination of factor variables. 
+- You can convert objects into data frame type objects with the data.frame command.
+- Long-formatted TSCS data: data frame where rows identify observations of a particular subject
+- Some statistical data analyses assume that data is ordered in a specific way. 
+- The subset command allows you to look at smaller parts of the data and examine outliers.
+- !s denote "not".
+- !is.na means "not missing".
+- The factor command allows you to convert a variable into a factor variable with the labels you want.
+
+7.2 Merging Data Sets
+- When your data sets are in the same format and have variables with identically matching ID values you can merge your data sets together.
+- The cbind command binds columns from the data sets together.
+- cbind is not good for real world data.
+- rbind binds rows together. 
+- The safest and most effective way to merge two data sets together is with the merge command.
+- You should set the argument to all=TRUE so that you keep all the observations from both data sets.
+- The data.table package works well for large data sets.
+- The duplicated command checks for duplicate values.
+

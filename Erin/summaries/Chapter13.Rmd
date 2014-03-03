@@ -1,0 +1,35 @@
+Chapter 13- Presenting on the Web with Markdown
+Erin Kreiling
+========================================================
+
+- LaTex is the standard markup language for academic documents.
+- HTML is best for presenting research findings on the internet.
+
+13.1 The Basics
+- Markdown does not have as many capabilities as HTML.
+- Unlike HTML, markdown documents do not have a preamble.
+- # level one header
+- ## level two header
+- ### level three header
+- Create a horizontal line with three or more equals signs.
+- Paragraphs are created by simply hitting return in between lines of text.
+- Italicize words by putting them between *asterisks*
+- Make words bold by putting them between **double asterisks**
+- Use LINK_TEXT to create hyperlinks.
+- To create itemized lists just use dashes like bullet points.
+
+13.2 Markdown with Pandoc and Custom CSS
+- Markdown is simple so it lacks research tools like footnotes and bibliographies. 
+- Pandoc will allow you insert footnotes and BibTeX bibliographies in your R Markdown documents.
+- You can customize the appearance of your Markdown files with custom CSS style sheets. 
+
+13.3 Slideshows with Markdown, knitr, and HTML
+- You can use these three to create HTML5 slideshows.
+- Advantages of HTML presentations using markdown: simple Markdown syntax, nice way to show content on the web, and any kind of content can be incorporated, like videos.
+- HTML presentations are easier to make than slidify ones.
+- A R presentation includes a .Rpres file, a .md file, and knitr cache and figure folders.
+
+13.4 Publishing Markdown Documents
+- You can open HTML files in any web browser. 
+- Dropbox public folders are great for sharing webpages and files. 
+- GitHub is another great option for publishing webpages.
