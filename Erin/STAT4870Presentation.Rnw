@@ -1,12 +1,24 @@
 \documentclass{beamer}
+\mode<presentation> {
+\usepackage{graphicx}
+\usetheme{Rochester}
 \usecolortheme{seahorse}
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
 
 \title{What is Beamer?}
 \subtitle{STAT 4870}
 \author{Erin Kreiling}
 \institute{Appalachian State University\\
-  Boone, North Carolina\\[1ex]
-  }
+  Boone, North Carolina\\
+}
 \date{February 25, 2014}
 
 \begin{document}
@@ -18,7 +30,15 @@
 
 %--- the presentation begins here ----------------%
 \begin{frame}{Introduction}
-  Creating a beamer class document really isn't very hard at all once you learn the basics! 
+  Creating a beamer class document really isn't very hard at all once you learn the basics! It has so many different features and you can put just about anything you want into a presentation! 
 \end{frame}
+
+\begin{frame}{The Beginnings of Beamer}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.8\linewdith]{ScreenShot1.jpg}
+\end{figure}
+\end{frame}
+
 
 \end{document}
