@@ -1,0 +1,20 @@
+## Chapter 11 Summary
+
+* This section is about how to create a Latex article with information on editor programs, basic structure of a latex document, syntax, and formatting for tex.
+
+* R Sweave is the file to use. You write in latex but can still incorporate R code chunks.
+
+* Arguments for latex commands are written inside curly braces {like this}.
+
+* The three commands needed to set up the body of the file:
+  1. \documentclass{article}
+  2. \begin{document}
+  3. \end{document}
+
+* Information on Headings, Paragraphs, and Horizantal Lines.
+
+* You can include math equations such as summations in a final product.
+
+* Bibliographies with Bibtex and including citations in the latex document is done with code such as \bibliography{main.bib} and \bibliographystyle{apa (or mla)}.
+
+* There is an introduction to Beamer and some nice examples.
