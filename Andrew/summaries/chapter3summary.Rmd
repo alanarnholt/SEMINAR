@@ -1,0 +1,18 @@
+# Chapter 3
+
+* This chapter is full of basic code directed to someone who has never used markdown before
+
+* Shows the difference between vectors and data frames
+
+* Discusses the use of R studio and the benefits of knitting code into readable chunks
+
+* Difference of code chunks and many examples listed
+
+1. Sweave-style is used on any tex syntax
+  
+2. Code chunks on markdown are knitted by knitr
+
+* With knitr, your work can be displayed or not displayed using the commands TRUE and FALSE
+
+* This chapter would be very useful to someone who had no idea what they were doing
+
