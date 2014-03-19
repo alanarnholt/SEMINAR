@@ -1,0 +1,29 @@
+Chapter 8- Statistical Modelling and knitr
+Erin Kreiling
+========================================================
+
+8.1 Incorporating Analyses into the Markup
+- The include command sets what text should be included in your final document.
+- The eval command sets whether or not the code chunk will run.
+- The echo command can hide a chunk's code.
+- The tidy command uses the formatR package to clean up code.
+- The results command shows the code, but not the results.
+- The warning, message, and error commands can hide warnings, messages, or errors.
+- The cache command runs the code chunk once and the output for when you knit the document again.
+- The \texttt command converts text to the typewriter font.
+- \Sexpr shows the results of R code in your knitr LaTeX produced text.
+- R code included inline with Sexpr is evaluated using current R options.
+- To include static code inline in an R Markdown document, enclose the code in single backticks.
+
+8.2 Dynamically Including Modular Analysis Files
+- You may want to run code stored in analysis files located on your computer.
+- The source command allows you save code to a file and then retrieve it.
+- Once you start collaborating with others, you should switch from sourcing to Dropbox.
+- The devtools package helps with sources from secure URLs.
+
+8.3 Reproducibly Random: set.seed
+- The set.seed command specifies the random number generator you are using.
+
+8.4 Computationally Intensive Analyses
+- The cache chunk option and makefiles make it easier to include computationally intensive analyses. 
+- If the code chunk you want to cache creates many objects, but you only want to save a few of them you can use cache.vars.
