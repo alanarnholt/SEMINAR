@@ -1,0 +1,81 @@
+---
+title       : Slidify Presentation
+subtitle    : 
+author      : Andrew Kryzanek
+job         : Senior Seminar 3/3/14
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+
+
+---
+
+## Basics
+
+1. Edit YAML front matter - a human reaadable data serialization format that takes concepts from programming languages such as C, Perl, and Python, and ideas from KML and the data format of eletctronic mail
+(YAML is a recursive acronym for "YAML Ain't Markup Language" and used to mean "Yet Another Markup Language.")
+
+2. Write using R Markdown
+
+3. Use an empty line followed by three dashes to separate slides!
+
+--- .class #id 
+## Installation
+
+Step  Description	Code
+- require(devtools)
+- install_github("slidify","ramnathv")
+- install_github("slidifyLibraries", "ramnathv")
+- library(slidify)
+- author("mydeck")
+
+Then edit in RMarkdown
+
+- slidify("index.RMD")
+- publish(user = "USER", repo = "REPO")
+
+---
+
+```{r results ='hide', echo=FALSE}
+require(class)
+require(datasets)
+require(devtools)
+require(e1071)
+require(lattice)
+require(maps)
+require(MASS)
+require(methods)
+require(PASWR)
+require(PASWR2)
+require(ggplot2)
+require(graphics)
+require(grDevices)
+require(stats)
+require(utils)
+```
+
+---
+## Uses Code-Chunks
+
+```{r echo = TRUE}
+
+
+summary(HSwrestler)
+
+```
+
+---
+```{r echo = TRUE}
+x <- glm(HSwrestler$HT~ HSwrestler$WT+HSwrestler$TANFAT+HSwrestler$SKFAT)
+summary(x)
+```
+---
+```{r echo = TRUE}
+hist(HSwrestler$WT, col = "blue")
+```
+---
+```{r echo = TRUE}
+boxplot(HT~WT, data=HSwrestler, main="Size Distribution")
+```

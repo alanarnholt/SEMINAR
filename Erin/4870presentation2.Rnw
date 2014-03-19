@@ -1,0 +1,101 @@
+
+\documentclass{beamer}
+
+\mode<presentation> {
+\usetheme{Rochester}
+\usecolortheme{seahorse}
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+
+\title{What is Beamer?} 
+
+\author{Erin Kreiling} 
+\institute[ASU]
+{
+Appalachian State University\\ 
+\medskip
+\textit{kreilingeg@email.appstate.edu} 
+}
+\date{\today} 
+
+\begin{document}
+
+\begin{frame}
+\titlepage 
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction} 
+Creating a beamer class document really isn't very hard at all once you learn the basics! It has so many different features and you can put just about anything you want into a presentation! 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{How to Begin With Beamer}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{FinalScreenshot}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{What Can Beamer Do For You?}
+\begin{itemize}
+\item
+\newtheorem{thm}{The Central Limit Theorem}
+\newtheorem{rmk}{The Fundamental Question of Inference}
+\begin{thm}
+If a sample is sufficiently large, then the distribution is approximately normal and the sample mean will be approximately equal to the population mean.
+\end{thm}
+\item
+\begin{rmk}
+How does what we observe compare to what would actually happen if the null hypothesis were true and we repeated the test over and over?
+\end{rmk}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How To Set Up Lists and Special Commands like Theorems}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{Screenshot02}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Other Options in Beamer}
+\begin{itemize}
+\item
+\begin{definition}
+         A \alert{prime number} is a number that has exactly two divisors.
+       \end{definition}
+\item
+ \begin{itemize}
+       \item 2 is prime (two divisors: 1 and 2).
+         \pause
+       \item 3 is prime (two divisors: 1 and 3).
+         \pause
+       \item 4 is not prime (\alert{three} divisors: 1, 2, and 4).
+       \end{itemize}
+  \begin{block}{Answered Questions}
+    How many primes are there?
+  \end{block}
+  \begin{block}{Open Questions}
+    Is every even number the sum of two primes?
+  \end{block}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Explanation}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{Screenshot03}
+\end{figure}
+\end{frame}
+
+\end{document}

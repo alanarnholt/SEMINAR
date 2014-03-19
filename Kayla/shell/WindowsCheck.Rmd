@@ -53,3 +53,19 @@ What time is it?
 ```{r engine = 'bash', comment = NA}
 date
 ```
+```{r engine = 'bash', comment= NA}
+pwd
+```
+
+```{r engine= 'bash', comment=NA}
+ls
+```
+
+```{r}
+x<- rexp(1000)
+hist(x,col="purple")
+
+```
+
+
+
