@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong><em>Chapter 8: Statistical Modeling and knitr</em></strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1><strong><em>Chapter 8: Statistical Modeling and knitr</em></strong></h1>
+
+<ul>
+<li><em>knitr</em> allows you to dymanically tie together your data gathering, statistical analysis and presentation documents<br/></li>
+</ul>
+
+<p><strong>8.1 Incorporting analyses into the Markup</strong></p>
+
+<ul>
+<li>For relatively short code it is sometimes easier to type it into a code chunk in your markup document, then have a differnet file with the code</li>
+<li>By default <em>knitr</em> chunks are run by R 
+
+<ul>
+<li>The code, and any text output including errors and warnings are inserted into the text of your presentation document</li>
+</ul></li>
+<li>How code chunks are inserted into the presentation document
+
+<ul>
+<li>include
+
+<ul>
+<li>When include is set to false, nothing will appear in the text of your document </li>
+</ul></li>
+<li>eval
+
+<ul>
+<li>Set eval to false if you want to include the code in your document but not run it </li>
+</ul></li>
+<li>echo 
+
+<ul>
+<li>When echo = false you will not see the code only the results </li>
+</ul></li>
+<li>tidy 
+
+<ul>
+<li>If tidy=false then you can manually arrange your code the way you want</li>
+<li>By default <em>knitr</em> organizes the code with <em>formatR</em> package </li>
+</ul></li>
+<li>warning, message, error 
+
+<ul>
+<li>set all three to false if you dont want the messages to come up</li>
+</ul></li>
+<li>cache 
+
+<ul>
+<li>When set to true, code will only be ran the first time you compile the document. If not code will be ran each time the document is compiled</li>
+</ul></li>
+</ul></li>
+<li>Showing code &amp; results inline 
+
+<ul>
+<li>LaTeX 
+
+<ul>
+<li>\texttt command in LaTeX will have the text show up in the typewriter font </li>
+<li>\verb command is a better option though, use something like | instead of curly brackets and LaTeX ignores everything inbetween the vertical bars </li>
+<li>\Sexpr allows you to dynamically show results</li>
+<li>In other words the results of the code show up but not the text of the code its self </li>
+</ul></li>
+<li>Markdown
+
+<ul>
+<li>To include the code inline in markdown, enclose the code in single back ticks <code>....</code></li>
+<li>To have just the results inlucde a single r after the first backtick <code>r...</code></li>
+</ul></li>
+</ul></li>
+<li>Dynamically including non-R code in code chunks<br/>
+
+<ul>
+<li>You are not limited to just R code chunks in your presentation</li>
+<li><em>knitr</em> can run a variety of other programs 
+use ther <code>engine</code> code chunk option to tell <em>knitr</em> which language is being used </li>
+<li>Although <em>knitr</em> supports these languages, it is not to the extent that <em>knitr</em> supports R<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>8.2: Dynamically Including Modualr Analysis Files</strong></p>
+
+<ul>
+<li>There are numerous reason to have your R source code located in seperate files from your presentation document
+
+<ul>
+<li>One reason is it can become tedious to edit both your presentation and code in one document</li>
+<li>Another reason is if you save the code in its own file, it becomes easier to use that code in multiple documents instead of copying and pasting it </li>
+<li>One last reason is it makes it easier for researchers who are only concered with parts of your reseach to access it </li>
+</ul></li>
+<li>Source from a local file 
+
+<ul>
+<li>First you save your code to a file on your computer </li>
+<li>It works like a code chunk from here on out</li>
+<li>Instead of writing code in the chunk, you just use the source command to access it </li>
+</ul></li>
+<li>Sourcing from a non-secure URL (http)
+
+<ul>
+<li>Works the same way, by using the source command in a chunk, which then makes that data accessible for the rest of the presentation </li>
+</ul></li>
+<li>Source from a secure URL (https)
+
+<ul>
+<li>You need to use the <em>devtools</em> package and yhe &#39;source_url&#39; command<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>8.3: Reproducibly Random: &#39;set.seed&#39;</strong></p>
+
+<ul>
+<li>If you are including simulations in your analysis it is often a good idea to specify the random number generator you used </li>
+<li>&#39;set.seed&#39; command in your source code will allow users to exactly replicate your &#39;randomly&#39; generated numbers </li>
+</ul>
+
+</body>
+
+</html>
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong>Chapter 9: Showing Results with Tables</strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1><strong>Chapter 9: Showing Results with Tables</strong></h1>
+
+<ul>
+<li>Learning how to dynamically connect statistical results with tables in your presentation helps to not only save you time but also helps to make them more reproducible</li>
+<li>There are a number of ways to turn R objects into tables </li>
+<li>The focus of this chapter will be the use of <em>xtable</em> and <em>apsrtable</em> packages<br/></li>
+</ul>
+
+<p><strong>9.1: Basic <em>knitr</em> Styntax for tables</strong></p>
+
+<ul>
+<li>The most important code chunk option is the &#39;results&#39; option</li>
+<li><code>results</code> option can have one of three values 
+
+<ul>
+<li><code>markup</code> uses an output hook to mark up the results in a predefined way</li>
+<li><code>hide</code> hides the results</li>
+<li><code>asis</code> is the simplest option and write the raw markup form of the tbale into the document 
+
+<ul>
+<li><code>asis</code> is what will be used throughout this chapter<br/></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>9.2: Table Basics</strong></p>
+
+<ul>
+<li>Tables in LaTeX 
+
+<ul>
+<li>Tables in LaTeX are normally embedded in two enviroments, the <code>table</code> and <code>tabular</code> enviroments </li>
+<li>The <code>tabular</code> enviroment
+
+<ul>
+<li>To begin the enviroment type <code>\begin{tabular}{TABLE_SPEC}</code></li>
+<li>To have three columns the first being left aligned the last two being centered, instead of <code>{table_spac}</code> you would have <code>{l c c}</code></li>
+<li>Verticle bars ( | ) in the table_spec will put a a verticle line in between the colums</li>
+<li>In the &#39;tabular&#39; eviroment columns are delimited with &amp; </li>
+<li>New lines are started with \ </li>
+<li>\hline between lines will give you a verticle line rows </li>
+</ul></li>
+<li>Table float enviroment 
+
+<ul>
+<li>After you begin your table, in square brackets you can add a position_spec that allows you to determine the location of the table
+
+<ul>
+<li>t lets you put it at the top of the page</li>
+<li>h lets you put it where the text was</li>
+<li>b puts it at the bottom of the page </li>
+</ul></li>
+<li>To add a title for the table use the <code>\caption</code> command </li>
+<li>Place tabular into the table enviroment to add the table</li>
+</ul></li>
+</ul></li>
+<li>Tables in Markdown/HTML
+
+<ul>
+<li>Markdown tables
+
+<ul>
+<li>They are much more simple than the LaTeX formatting </li>
+<li>Verticle bars seperate columns </li>
+<li>Rows are started with a new line</li>
+<li>Use dashes to seperate the head of the table from the rest of the table </li>
+<li>Colons on the horizontal dashes help to set up the justification</li>
+<li>You can add a caption with the heading syntax</li>
+</ul></li>
+<li>HTML tables
+
+<ul>
+<li>HTML uses tags to begin and end tables </li>
+<li>The main element used to create tables, is just simple the <code>tables</code> element </li>
+<li>HTML tags(eviroment) start with &lt;&hellip;&gt; and end with &lt;/&hellip;&gt;</li>
+<li>You can add attributes inside of start tags </li>
+<li>You can seperate table heads from the body with <code>thead</code> and <code>tbody</code> tags </li>
+<li>Table rows are in <code>tr</code> tags and cells are delimited with <code>td</code><br/></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>9.3: Creating tables from R objects</strong></p>
+
+<ul>
+<li><em>xtable</em> and <em>apsrtable</em> packages are easy to use to convert an object of the class they support into a table </li>
+<li>To find the full list of objects that <em>xtable</em> supports use the command <code>methods(xtable)</code> into the R console </li>
+<li>To see <em>apsrtable&#39;s</em> supported classes use the command <code>showMethods(&quot;modelInfo&quot;)</code></li>
+<li>xtable for LaTex
+
+<h2>- You have to first have two code chunk options, the first being <code>results=&#39;asis&#39;</code> the second being <code>echo=FALSE</code></h2></li>
+</ul>
+
+</body>
+
+</html>
+
