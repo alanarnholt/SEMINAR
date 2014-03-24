@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong><em>Chapter 4: Getting started with file management</em></strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<p>Kayla Janos </p>
+
+<h1><strong><em>Chapter 4: Getting started with file management</em></strong></h1>
+
+<ul>
+<li>File management is an crucial part of reproducible research </li>
+<li>The two key things you want to do are:
+
+<ul>
+<li>Explicitly tie your files together</li>
+<li>Have a plan of how you want to organize your information</li>
+</ul></li>
+<li>The best information that independent researchers get, comes from your files and the information they can access from it </li>
+<li>If your files are better organized then its easier for you to go back and make changes to the work you have already done<br/></li>
+</ul>
+
+<p><strong>4.1: File Paths and Naming Conventions</strong></p>
+
+<ul>
+<li>Every operating system in this book uses file trees to organize files in a hierarchical way</li>
+<li>Root Directories 
+
+<ul>
+<li>A root is the first level in a disk</li>
+<li>The root is where the file tree grows from </li>
+<li>All other directories are subdirectories of their root directory</li>
+<li>Windows computers can have multiple directories </li>
+<li>The root directory is given a drive letter assignment </li>
+<li>Windows most of the time uses the C:\ directory </li>
+</ul></li>
+<li>Subdirectories and parent directories 
+
+<ul>
+<li>Directories inside of other directories are also called child directories of the parent directory </li>
+<li>Windows computers indicate subdirectories with a back slash \ </li>
+<li>You need two backslashes when you type windows file paths into r (\)</li>
+<li>For Unix-like systems, directories are indicated with a forward slash (/)</li>
+<li>The book uses mostly Unix-like file paths </li>
+</ul></li>
+<li>Spaces in directory and file names 
+
+<ul>
+<li>You do not want to include spaces in your file names </li>
+<li>Spaces on occasion create problems for computer programs when trying to read the file path</li>
+<li>CamelBack is a good way to save files</li>
+<li>In CamelBack new words are indicated by captial letters </li>
+</ul></li>
+<li>Working directories 
+
+<ul>
+<li>You want to keep in mind when using programs like R what the working directory is </li>
+<li>Working directories are where the program automatically searches for files and other directories<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>4.2: Organizing Your Reserach Project</strong></p>
+
+<ul>
+<li>The example given on page 58 shows an example of a research project 
+
+<ul>
+<li>The main directory is called <em>Example Project</em> </li>
+<li>There is three subdirectories from there </li>
+<li>Data gathering directory</li>
+<li>Analysis directory</li>
+<li>Presentation directory</li>
+<li>From there each of those contain their own subdirectories that help to organize the project even further </li>
+<li>There also includes README.md files which give an overview of all the files in the project </li>
+<li>These files should include a brief summary of the things included in the project<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>4.3: Setting Directories as RStudio Projects</strong></p>
+
+<ul>
+<li>If you are using RStudio it is a smart idea to organize your files as projects </li>
+<li>It is fairly simple to turn a normal directory into a RStudio project
+
+<ul>
+<li>You click on file, then go to new project. From there you can select the option Existing directory, then find your directory and select create project </li>
+</ul></li>
+<li>RStudio Projects are useful for numbers of reasons 
+
+<ul>
+<li>It is listed in the Project menu so it is easily accessible </li>
+<li>When you open a project in R studio, it automatically sets everything up the way you need it to be </li>
+<li>You can easily set specific project options </li>
+<li>When you close the project everything is automatically save </li>
+<li>Helps to control versions<br/></li>
+</ul></li>
+</ul>
+
+<p><strong>4.4: R file manipulation commands</strong></p>
+
+<ul>
+<li>There is a lot of different commands avaliable in R to handle navigating through files </li>
+<li>:getwd:</li>
+</ul>
+
+</body>
+
+</html>
+

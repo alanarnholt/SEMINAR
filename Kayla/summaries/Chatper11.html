@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title><strong>Chapter 11: Presenting with LaTeX</strong></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<p>Kayla Janos </p>
+
+<h1><strong>Chapter 11: Presenting with LaTeX</strong></h1>
+
+<p><strong>11.1: The basicis</strong></p>
+
+<ul>
+<li>To create a LaTeX in RStudio, you use an R sweave file<br/></li>
+<li>Sweave files are LaTeX files that can include <em>knitr</em> code chunks </li>
+<li>Rstudio will knit and compile your document at the same time </li>
+<li>It is easy to add formatting with the format drop down menu in RSTudio </li>
+<li>Basic LaTeX commands 
+
+<ul>
+<li>Commands start with a backslash ()</li>
+<li>Arguments are written inside curly braces ({})</li>
+<li>If your command doesnt have an arguement you do not need the curly braces </li>
+<li><a href="http://www.ntg.nl/doc/biemesderfer/ltxcrib.pdf">http://www.ntg.nl/doc/biemesderfer/ltxcrib.pdf</a> is a place where you can find a comprehensive list of LaTeX commands </li>
+</ul></li>
+<li>Preamble and Body
+
+<ul>
+<li>All LaTeX documents have to have a preamble </li>
+<li>Ususally starts with documentclass command </li>
+<li>The percent sign is LaTeX&#39;s comment character 
+
+<ul>
+<li>Specifies what type of artcile you are making LaTeX refers to them as classes </li>
+</ul></li>
+<li>You can add options to document class that change the enitre format of the document
+
+<ul>
+<li>\documentclass[twocolumn]{article} would give you an artcile with who columns </li>
+</ul></li>
+<li>You can also use the preamble to specify other style options and load any other packages you may want to use 
+
+<ul>
+<li>Most of the packagaes that you will want to use will already downloaded when you download TeX unlike R </li>
+</ul></li>
+<li>When your preamble is complete you must use the \begin{document} command to set the correct enviroment </li>
+<li>The very last line of the document should be \end{document}</li>
+<li>It is also a good idea to include <em>knitr</em> chunks in the preamble that set things such as global chunk options </li>
+<li>It is a smart practice to use the title, author, and date commands right after the document begins 
+
+<ul>
+<li>Right after all that information has been added you use the \maketitle command to display it </li>
+</ul></li>
+<li>\ Force a new line in LaTeX </li>
+<li>The thanks command allows us to create a footnote for author  contact info that isnt numbered like other footnotes </li>
+<li>Headings
+
+<ul>
+<li>There are many levels of sections</li>
+<li>section, subsection, paragraph, subparagraph</li>
+<li>Headers are automatically numbered </li>
+<li>To have unnumbered headings write your command like this \section*{Unnumbered Section}</li>
+<li>Chapter will create a new chapter</li>
+<li>part will create collections of chapters </li>
+</ul></li>
+<li>Paragraphs and spacing 
+
+<ul>
+<li>Add blank lines between lines to create paragraphs </li>
+<li>The tabs for the start of the parapgrahs are determined by the artcile class</li>
+<li>More blank lines does not mean more space you must use the vspace command to do that </li>
+<li>It is the same concept with horizontal spacing, extra spaces between words does not mean extra you the hspace command will need to be used </li>
+</ul></li>
+<li>Horizontal lines
+
+<ul>
+<li>The hrulefill will create horizontal lines in the text of a document </li>
+</ul></li>
+<li>Text Formatting 
+
+<ul>
+<li>emph command for italics </li>
+<li>textbf for cold </li>
+<li>You and nest them inside each other to have both </li>
+<li>You can set the font size for the entire docuemnt by using it as an option in the documentclass command in the preamble </li>
+<li>To change the size of specfic text you use the {\SIZE_COMMAND &hellip; } command, where you replace the SIZE_COMMAND with either Huge, huge, Large, large, normalsize, small, footnotesize, scriptsize, tiny. </li>
+<li>You can not directly enter letters wtih diacrtitics into LaTeX</li>
+<li>\c{c} gives you a c with a cedilla </li>
+<li>\&#39;{a} govesa you an a with a accent </li>
+<li>Quotation marks are done with </li>
+</ul></li>
+<li>Math
+
+<ul>
+<li>If you want to have math inline with your text you have to use the math syntax which is   \(  . . .  \) </li>
+<li>To have the math seperate from the text you place the math commands in square brackets instead [&hellip;]\</li>
+</ul></li>
+<li>Lists 
+
+<ul>
+<li>In order to create bullet lists in R you have to use the itemize enviroment </li>
+<li>\begin{itemize} starts the list </li>
+<li>\item is what you use to signify where you want the bullet </li>
+<li>You need to use \end{itemize} when you are done with the list </li>
+<li>Use enumerate to number instead of bullets </li>
+<li>You can use nesting to create sublists within lists </li>
+</ul></li>
+<li>Footnotes
+
+<ul>
+<li>\footnote{} is how to create a footnote, the information goes inside the curly braces </li>
+<li>LaTeX automatically numbers and formats for you<br/></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>11.2: Bibliographies with BibTeX</strong> </p>
+
+<ul>
+<li>BibTeX bibliographies are stored in plain text files with th extention .bib</li>
+<li>The sytanx for the citation looks like:<br/>
+@DOCUMENT_TYPE{CITE_KEY,<br/>
+title = {TITLE},<br/>
+author = {AUTHOR},<br/>
+&hellip; = {&hellip;}<br/>
+}</li>
+<li>CITE_KEY is the reference label you use to include that ciation in the presentation document
+
+<ul>
+<li>The most common way of doing this is the authors surname and publication year</li>
+</ul></li>
+<li>Authors<br/>
+
+<ul>
+<li>Multiple authors are sepereted by and </li>
+<li>BibTex assumes the last word for each author is their sure name </li>
+<li>To have multiple words as the surname enclose them in curly bracets </li>
+</ul></li>
+<li>Each item entry must end in a commect except the last one </li>
+<li>Including Citations in LaTeX documents 
+
+<ul>
+<li>To include citations from a BibTex file in your LaTeX document first use the bibliography command </li>
+<li>You can change the formatting of teh bibliograpy with the bibliograph style command 
+
+<ul>
+<li>Place this immedeately before the bibliography command </li>
+</ul></li>
+<li>Place the cite command in the documents text where you want to place a reference 
+
+<ul>
+<li>This is where you include your CITE_KEY information </li>
+<li>Square brackets can be used to add options to your citiation </li>
+<li>Multiple citations can be inlcuded by using a comma between them </li>
+</ul></li>
+</ul></li>
+<li>Generating a BibTex file of R package citations 
+
+<ul>
+<li>use the citation command inside the code chunk</li>
+<li><em>knitr</em> package creates BibTex bibliographies for R packages if you use the write_bib command </li>
+</ul></li>
+<li>You can include more than one bibliography in the bibliography command by placing a comma between them </li>
+<li>If you place all the packages that you want into a character vector, you can run it through write_bib and create a .bib file that way<br/></li>
+</ul>
+
+<p><strong>11.3: Presentations with LaTeX Beamer</strong></p>
+
+<ul>
+<li>The beamer class is a way you can make a slideshow in LaTeX</li>
+<li>To create a beamer slideshow, set your documentclass to beamer </li>
+<li>From there you start the document the same as  other classes </li>
+<li>Individiual slides are created using the frame envrioments </li>
+<li>Frame titles are make using frame title </li>
+<li>Unfortunately you do not know until the document is compiled if you have put to much information on a slide </li>
+<li>\tableofcontents can be automatically created from section headings, and will be on its own page</li>
+<li>List work the same way in beamer, but you have the added bonus of being able to determine how they appear
+
+<ul>
+<li>After \item enclose the number of the order you want it to appear in &lt; -&gt; </li>
+</ul></li>
+</ul>
+
+</body>
+
+</html>
+

@@ -1,0 +1,5 @@
+library(googleVis)
+attach(Andrew)
+AndrewTable<- head(Andrew)
+Map<-plot(gvisMap(Andrew, "LatLong" , "Tip",options=list(showLine=TRUE, enableScrollWheel=TRUE))
+Table<- gvisTable(AndrewTable)

@@ -1,0 +1,43 @@
+Chapter 12- Large LaTeX Documents: Theses, Books, and Batch Reports
+Erin Kreiling
+========================================================
+
+- In order to create a large document, you should segment the markup file into individual chapter or section files and bring them all together when you compile the whole document. 
+- You should take advantage of LaTeX and knitr to separate markup files into manageable pieces. 
+- The manageable pieces are called child files, which are combined using a parent document.
+
+12.1 Planning Large Documents
+- If your presentation markup files are difficult to navigate, they are difficult to reproduce.
+- The parent document is like the skeleton that organizes the children in a specific order.
+- The parent document includes the preamble and all of the loaded, necessary LaTeX packages. 
+- When you compile the parent document, you compile the entire document.
+- The preamble only needs to be in the parent document.
+- It is a good idea to store your child files in a subdirectory of the folder storing the parent file. 
+
+12.2 Large Documents with Traditional LaTeX
+- The input command is used where we want the child to show up.
+- The tableofcontents will automatically create a table of contents.
+- LaTeX makes it easy to include lists of figures and tables with the captions, table, figure, listoffigures, and listoftables commands.
+- The clearpage command inserts a blank page before an item.
+- You can automatically create an index using makeidx. 
+
+12.3 knitr and Large Documents
+- knitr's parent-child options allow us to include knittable children in documents and knit each child document separately. 
+- The child command includes child documents within knitr.
+- You can continue to use input and include within child code chunks.
+- Use the set_parent command to specify where the parent file is.
+- You can also use set_parent with Sexpr.
+- knitr's parent-child functions work in any markup language.
+
+12.4 Child Documents in a Different Markup Language
+- In knitr, you can use the Pandoc program to convert child documents written in a different language into the primary markup language.
+- The engine option set to 'bash' or 'sh' calls Pandoc directly from your parent document.
+- -f markdown and -t latex tell Pandoc to convert the document from Markdown to LaTeX syntax.
+
+12.5 Creating Batch Reports
+- Batch reports subset a data set into multiple pieces and use these pieces as the input for knitr code chunks in different presentation documents for each subset of the data set. 
+- The brew package is great for creating batch reports. 
+- knit_expand can also create batch reports.
+- brew has more capabilities than knit_expand.
+- Text in a brew template document is printed as is when we brew it unless it is between brew's delimiters.
+
