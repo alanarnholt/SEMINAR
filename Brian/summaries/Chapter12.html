@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Chapter 12 Large Latex Documents</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Chapter 12 Large Latex Documents</h1>
+
+<p>For longer and more complex documents such as books or theses, a single Latex file can quickly become difficult to handle. Potential problems include slow or crashed computer system due to large compiling file, extremely difficulty in finding and correcting an error, complicated revising process, and so on. An ideal solution is to segment the document into several smaller files, called <strong>children</strong> files, and to manage those children files through one main file, called *<em>parent</em> document. This would profit us from a modular file structure while producing one presentation with continuous section and page numbering.</p>
+
+<h2>Planning the Documents</h2>
+
+<h2>Basic Syntax</h2>
+
+<p>Unlike a Latex documents, RMarkdown does not require either a preamble or a body environment. To create a header, we can use the hash mark (#) at the beginning of the header line. There are six levels of header, so the first level gets one hash mark (#), the second gets two (##), and so on. We can also create level one headers by following a line of text with equal (=) signs and level two by following a line of text with dashes (-):</p>
+
+<p><code>Level One</code><br/>
+<code>=========</code></p>
+
+<p><code>Level Two</code><br/>
+<code>---------</code></p>
+
+<p>Horizontal lines that run the width of the page can be created by placing three or more equal (=) signs or dashes separated by text from above by one blank line:</p>
+
+<p><code>Horizontal lines</code></p>
+
+<p><code>==========</code></p>
+
+<p>To <em>italicize</em> a word, place it between two asterisks (<code>*</code>) and to make words <strong>bold</strong>, place them between four asterisks. Markdown uses a backslash() as an escape character.</p>
+
+<p>To typeset math equations in Markdown we use similar techniques as in Latex. For example, use a pair of dollar signs ($) to enclose an inline math equation and use <code>\[ \]</code> for a display-style equation.</p>
+
+<h2>Slideshows with Markdown and HTML</h2>
+
+<p>The easiest way to create an HTML slideshows is with the use of RStudio&#39;s R Presentation documents. To create a new file, go to <code>File</code> \( \rightarrow \) <code>New</code> \( \rightarrow \) <code>R Presentation</code>. The syntax for creating slides is quite simple.  The slide title is followed by three equal signs (===); this also indicates a new slide is added. The very first slide is automatically the title slide and will be formatted differently from the rest. </p>
+
+<p>Another way to create HTML slideshows is to use the <em>slidify</em> package.  This package converts R Markdown files into HTML slideshows. </p>
+
+</body>
+
+</html>
+
