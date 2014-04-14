@@ -1,0 +1,4 @@
+Tables
+========================================================
+
+  Making tables in RStudio is a very useful skill to have. One of the most user-friendly packages for making these tables is called xtables, which can be used to create many different types of tables to input data into. Learning how to dynamically connect statistical results with tables in your presentation helps to not only save you time but also helps to make them more reproducible.
